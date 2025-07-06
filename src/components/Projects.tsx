@@ -9,64 +9,64 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Built with modern technologies for optimal performance.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&auto=format",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "XCodeLab - Coding Platform",
+      description: "A full-stack coding platform for practicing data structures and algorithms. Supports multi-language problem solving, real-time code execution, submission tracking, and custom playlists for organized learning.",
+      image: "https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      technologies: ["React", "Node.js", "PostgreSQL", "Prisma", "Tailwind CSS", "DaisyUI", "Zod", "Judge0", "Docker", "Monaco Editor"],
+      liveUrl: "https://vimeo.com/1098428973?share=copy",
+      githubUrl: "https://www.linkedin.com/in/gitesh-zope/",
       featured: true
     },
     {
       id: 2,
       title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, team collaboration features, and advanced analytics dashboard.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop&auto=format",
-      technologies: ["React", "Express", "MongoDB", "Socket.io", "Tailwind"],
+      description: "Build a RESTful API to manage users, projects, tasks, subtasks, and notes with role-based access, file uploads, and modular MVC structure for scalability and maintainability.",
+      image: "https://img.freepik.com/free-vector/students-employees-adding-events-deadlines-calendar-app-young-people-using-time-organizer-planner-flat-illustration_74855-20735.jpg?semt=ais_hybrid&w=740",
+      technologies: ["Node.js", "Express", "Mongoose", "MongoDB", "Multer", "JWT"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/gitesh216/task-manager",
       featured: true
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and historical weather data visualization.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop&auto=format",
-      technologies: ["React", "TypeScript", "Charts.js", "Weather API"],
+      title: "Snapbox",
+      description: "A full-stack cloud storage application that features secure user authentication and optimized file storage. Implemented file upload and folder-based organization functionality.",
+      image: "https://plus.unsplash.com/premium_photo-1677093905912-a653c6301260?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      technologies: ["Nextjs", "Drizzle", "Clerk", "ImageKit", "HeroUI"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/gitesh216/snapbox",
       featured: false
     },
+    // {
+    //   id: 5,
+    //   title: "AI Chat Application",
+    //   description: "Intelligent chat application powered by AI with natural language processing, context awareness, and multi-language support.",
+    //   image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop&auto=format",
+    //   technologies: ["React", "Python", "OpenAI API", "WebSocket", "Docker"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   featured: true
+    // },
     {
       id: 4,
-      title: "Fitness Tracker",
-      description: "Mobile-first fitness application with workout tracking, progress analytics, and social features for fitness enthusiasts.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop&auto=format",
-      technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "WriteWave",
+      description: "A simple blog application with user authentication and post creation, editing, and deletion features.",
+      image: "https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?q=80&w=809&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      technologies: ["React", "Tailwind CSS", "Appwrite", "Vercel"],
+      liveUrl: "https://write-wave-blog.vercel.app/",
+      githubUrl: "https://github.com/gitesh216/write-wave-blog",
       featured: false
     },
     {
       id: 5,
-      title: "AI Chat Application",
-      description: "Intelligent chat application powered by AI with natural language processing, context awareness, and multi-language support.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop&auto=format",
-      technologies: ["React", "Python", "OpenAI API", "WebSocket", "Docker"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true
-    },
-    {
-      id: 6,
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website showcasing projects and skills with smooth animations and optimized performance.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop&auto=format",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+      title: "Kanban Board",
+      description: "A simple Kanban board built with JavaScript to practice DOM manipulation and state management. Supports task creation, drag-and-drop between columns, and dynamic UI updates — designed for hands-on JS learning.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=739&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      technologies: ["Javascript", "DOM", "HTML", "CSS"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false
-    }
+    },
   ];
 
   const featuredProjects = projects.filter(p => p.featured);
@@ -119,14 +119,14 @@ const Projects = () => {
             {featuredProjects.map((project, index) => (
               <article key={project.id} className={`project-card hover-lift animate-fade-in-up flex flex-col lg:flex-row relative overflow-hidden ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
                 {/* Project card code decoration */}
-                <div className="absolute top-4 right-4 opacity-5 pointer-events-none hidden lg:block">
+                {/* <div className="absolute top-4 right-4 opacity-5 pointer-events-none hidden lg:block">
                   <pre className="font-mono text-xs text-primary max-w-xs">
                     <code>{`<article className="project-card">
   <h3>{project.title}</h3>
   <p>{project.description}</p>
 </article>`}</code>
                   </pre>
-                </div>
+                </div> */}
                 
                 <div className="lg:w-1/2 relative z-10">
                   <OptimizedImage
@@ -188,13 +188,13 @@ const Projects = () => {
               {otherProjects.map((project, index) => (
                 <article key={project.id} className="project-card hover-lift animate-fade-in-up relative overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }} role="listitem">
                   {/* Small code decoration for grid cards */}
-                  {index === 0 && (
+                  {/* {index === 0 && (
                     <div className="absolute bottom-2 right-2 opacity-8 pointer-events-none">
                       <pre className="font-mono text-xs text-muted-foreground">
                         <code>{`<Badge>{tech}</Badge>`}</code>
                       </pre>
                     </div>
-                  )}
+                  )} */}
                   
                   <OptimizedImage
                     src={project.image}
@@ -252,7 +252,7 @@ const Projects = () => {
           <div className="text-center animate-fade-in-up">
             <Button variant="outline" size="lg" asChild>
               <a 
-                href="https://github.com" 
+                href="https://github.com/gitesh216" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="View all projects on GitHub (opens in new tab)"
