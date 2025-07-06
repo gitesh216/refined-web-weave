@@ -1,8 +1,9 @@
-
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Github, ArrowRight } from 'lucide-react';
 import OptimizedImage from '@/components/ui/optimized-image';
+import FloatingCode from '@/components/ui/floating-code';
+import { codeSnippets } from '@/utils/codeSnippets';
 
 const Projects = () => {
   const projects = [
@@ -72,8 +73,37 @@ const Projects = () => {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section id="projects" className="py-20 bg-card/30" role="region" aria-labelledby="projects-heading">
-      <div className="section-padding">
+    <section id="projects" className="py-20 bg-card/30 relative overflow-hidden" role="region" aria-labelledby="projects-heading">
+      {/* Background Code Elements */}
+      <FloatingCode
+        code={codeSnippets.projects.component}
+        position="custom"
+        opacity={0.06}
+        rotate={-15}
+        className="absolute top-10 -left-32 max-w-lg hidden xl:block"
+        animate={true}
+      />
+      
+      <FloatingCode
+        code={codeSnippets.projects.filtering}
+        position="custom"
+        opacity={0.1}
+        rotate={10}
+        className="absolute top-1/3 -right-20 max-w-md hidden lg:block"
+        animate={true}
+      />
+
+      <FloatingCode
+        code={codeSnippets.projects.styles}
+        position="custom"
+        opacity={0.08}
+        rotate={-8}
+        language="css"
+        className="absolute bottom-20 left-10 max-w-sm hidden lg:block"
+        animate={true}
+      />
+
+      <div className="section-padding relative z-10">
         <div className="container-width">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 id="projects-heading" className="text-3xl md:text-4xl font-bold mb-4">
@@ -87,8 +117,18 @@ const Projects = () => {
           {/* Featured Projects */}
           <div className="grid lg:grid-cols-1 gap-12 mb-16">
             {featuredProjects.map((project, index) => (
-              <article key={project.id} className={`project-card hover-lift animate-fade-in-up flex flex-col lg:flex-row ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="lg:w-1/2">
+              <article key={project.id} className={`project-card hover-lift animate-fade-in-up flex flex-col lg:flex-row relative overflow-hidden ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
+                {/* Project card code decoration */}
+                <div className="absolute top-4 right-4 opacity-5 pointer-events-none hidden lg:block">
+                  <pre className="font-mono text-xs text-primary max-w-xs">
+                    <code>{`<article className="project-card">
+  <h3>{project.title}</h3>
+  <p>{project.description}</p>
+</article>`}</code>
+                  </pre>
+                </div>
+                
+                <div className="lg:w-1/2 relative z-10">
                   <OptimizedImage
                     src={project.image}
                     alt={`Screenshot of ${project.title} project`}
@@ -98,7 +138,7 @@ const Projects = () => {
                     height={300}
                   />
                 </div>
-                <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+                <div className="lg:w-1/2 p-8 flex flex-col justify-center relative z-10">
                   <div className="flex items-center gap-2 mb-3">
                     <Badge className="bg-primary/10 text-primary border-primary/20">Featured</Badge>
                   </div>
@@ -146,7 +186,16 @@ const Projects = () => {
             <h3 className="text-2xl font-bold mb-8 text-center">Other Projects</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
               {otherProjects.map((project, index) => (
-                <article key={project.id} className="project-card hover-lift animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }} role="listitem">
+                <article key={project.id} className="project-card hover-lift animate-fade-in-up relative overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }} role="listitem">
+                  {/* Small code decoration for grid cards */}
+                  {index === 0 && (
+                    <div className="absolute bottom-2 right-2 opacity-8 pointer-events-none">
+                      <pre className="font-mono text-xs text-muted-foreground">
+                        <code>{`<Badge>{tech}</Badge>`}</code>
+                      </pre>
+                    </div>
+                  )}
+                  
                   <OptimizedImage
                     src={project.image}
                     alt={`Screenshot of ${project.title} project`}
@@ -154,7 +203,7 @@ const Projects = () => {
                     width={400}
                     height={240}
                   />
-                  <div className="p-6">
+                  <div className="p-6 relative z-10">
                     <h4 className="text-xl font-semibold mb-3">{project.title}</h4>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                       {project.description}

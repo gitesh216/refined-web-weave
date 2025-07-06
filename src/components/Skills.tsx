@@ -1,5 +1,7 @@
 
 import { Badge } from '@/components/ui/badge';
+import FloatingCode from '@/components/ui/floating-code';
+import { codeSnippets } from '@/utils/codeSnippets';
 
 const Skills = () => {
   const skillCategories = [
@@ -26,8 +28,37 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="section-padding">
+    <section id="skills" className="py-20 relative overflow-hidden">
+      {/* Background Code Elements */}
+      <FloatingCode
+        code={codeSnippets.skills.data}
+        position="custom"
+        opacity={0.08}
+        rotate={-3}
+        className="absolute top-20 -left-20 max-w-md hidden lg:block"
+        animate={true}
+      />
+      
+      <FloatingCode
+        code={codeSnippets.skills.rendering}
+        position="custom"
+        opacity={0.12}
+        rotate={8}
+        className="absolute bottom-10 -right-10 max-w-sm hidden xl:block"
+        animate={true}
+      />
+
+      <FloatingCode
+        code={codeSnippets.skills.types}
+        position="custom"
+        opacity={0.1}
+        rotate={-12}
+        language="typescript"
+        className="absolute top-1/2 right-20 max-w-xs hidden lg:block"
+        animate={true}
+      />
+
+      <div className="section-padding relative z-10">
         <div className="container-width">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -38,13 +69,13 @@ const Skills = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 relative">
             {skillCategories.map((category, index) => (
-              <div key={category.title} className="tech-card animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <h3 className="text-xl font-semibold mb-4 text-primary">
+              <div key={category.title} className="tech-card animate-fade-in-up relative overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
+                <h3 className="text-xl font-semibold mb-4 text-primary relative z-10">
                   {category.title}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 relative z-10">
                   {category.skills.map((skill) => (
                     <Badge 
                       key={skill} 
@@ -55,6 +86,19 @@ const Skills = () => {
                     </Badge>
                   ))}
                 </div>
+                
+                {/* Card-specific code decoration */}
+                {index === 1 && (
+                  <div className="absolute top-2 right-2 opacity-5 pointer-events-none">
+                    <pre className="font-mono text-xs text-primary">
+                      <code>{`{skills.map(skill => (
+  <Badge key={skill}>
+    {skill}
+  </Badge>
+))}`}</code>
+                    </pre>
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -1,5 +1,7 @@
 
 import { Badge } from '@/components/ui/badge';
+import FloatingCode from '@/components/ui/floating-code';
+import { codeSnippets } from '@/utils/codeSnippets';
 
 const About = () => {
   const highlights = [
@@ -11,8 +13,28 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-card/30">
-      <div className="section-padding">
+    <section id="about" className="py-20 bg-card/30 relative overflow-hidden">
+      {/* Background Code Elements */}
+      <FloatingCode
+        code={codeSnippets.about.component}
+        position="custom"
+        opacity={0.08}
+        rotate={-5}
+        className="absolute top-20 right-0 max-w-md hidden xl:block"
+        animate={true}
+      />
+      
+      <FloatingCode
+        code={codeSnippets.about.animations}
+        position="custom"
+        opacity={0.1}
+        rotate={12}
+        language="css"
+        className="absolute bottom-10 -left-16 max-w-sm hidden lg:block"
+        animate={true}
+      />
+
+      <div className="section-padding relative z-10">
         <div className="container-width">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -24,8 +46,19 @@ const About = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
-              <div className="prose prose-lg text-foreground max-w-none">
+            <div className="animate-fade-in-up relative">
+              {/* Inline code decoration */}
+              <div className="absolute -top-8 -right-8 opacity-8 pointer-events-none hidden lg:block">
+                <pre className="font-mono text-xs text-primary">
+                  <code>{`const developer = {
+  name: "John Doe",
+  experience: "5+ years",
+  passion: "Full-stack development"
+};`}</code>
+                </pre>
+              </div>
+              
+              <div className="prose prose-lg text-foreground max-w-none relative z-10">
                 <p className="text-lg leading-relaxed mb-6">
                   Hello! I'm John, a passionate full-stack developer with over 5 years of experience 
                   creating digital solutions that make a difference. My journey began with curiosity 
@@ -56,7 +89,15 @@ const About = () => {
               </div>
             </div>
 
-            <div className="animate-fade-in-up">
+            <div className="animate-fade-in-up relative">
+              {/* Code decoration around image */}
+              <div className="absolute -top-4 -left-4 opacity-6 pointer-events-none">
+                <pre className="font-mono text-xs text-green-400">
+                  <code>{`// Always learning
+const skills = [...existingSkills, newTech];`}</code>
+                </pre>
+              </div>
+              
               <div className="relative">
                 <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 p-1">
                   <div className="w-full h-full rounded-2xl bg-muted flex items-center justify-center">
@@ -66,6 +107,15 @@ const About = () => {
                       <p className="text-sm text-muted-foreground">Coming Soon</p>
                     </div>
                   </div>
+                </div>
+                
+                {/* Bottom right code decoration */}
+                <div className="absolute -bottom-4 -right-4 opacity-8 pointer-events-none">
+                  <pre className="font-mono text-xs text-orange-400">
+                    <code>{`<div className="rounded-2xl">
+  <img src="profile.jpg" />
+</div>`}</code>
+                  </pre>
                 </div>
               </div>
             </div>

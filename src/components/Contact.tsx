@@ -1,6 +1,8 @@
 
 import ContactForm from '@/components/ContactForm';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import FloatingCode from '@/components/ui/floating-code';
+import { codeSnippets } from '@/utils/codeSnippets';
 
 const Contact = () => {
   const contactInfo = [
@@ -46,8 +48,37 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20" role="region" aria-labelledby="contact-heading">
-      <div className="section-padding">
+    <section id="contact" className="py-20 relative overflow-hidden" role="region" aria-labelledby="contact-heading">
+      {/* Background Code Elements */}
+      <FloatingCode
+        code={codeSnippets.contact.form}
+        position="custom"
+        opacity={0.06}
+        rotate={-10}
+        className="absolute top-10 -left-24 max-w-lg hidden xl:block"
+        animate={true}
+      />
+      
+      <FloatingCode
+        code={codeSnippets.contact.validation}
+        position="custom"
+        opacity={0.1}
+        rotate={8}
+        language="typescript"
+        className="absolute top-1/3 -right-16 max-w-sm hidden lg:block"
+        animate={true}
+      />
+
+      <FloatingCode
+        code={codeSnippets.contact.emailjs}
+        position="custom"
+        opacity={0.08}
+        rotate={-15}
+        className="absolute bottom-20 left-20 max-w-md hidden lg:block"
+        animate={true}
+      />
+
+      <div className="section-padding relative z-10">
         <div className="container-width">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold mb-4">
@@ -61,12 +92,21 @@ const Contact = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="animate-fade-in-up">
+            <div className="animate-fade-in-up relative">
+              {/* Form code decoration */}
+              <div className="absolute -top-6 -right-6 opacity-6 pointer-events-none hidden lg:block">
+                <pre className="font-mono text-xs text-blue-400">
+                  <code>{`<form onSubmit={handleSubmit}>
+  <input type="email" required />
+  <button type="submit">Send</button>
+</form>`}</code>
+                </pre>
+              </div>
               <ContactForm />
             </div>
 
             {/* Contact Info */}
-            <div className="animate-fade-in-up space-y-8">
+            <div className="animate-fade-in-up space-y-8 relative">
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Let's connect</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -76,14 +116,23 @@ const Contact = () => {
                 </p>
 
                 <div className="space-y-4" role="list">
-                  {contactInfo.map((info) => (
+                  {contactInfo.map((info, index) => (
                     <a
                       key={info.label}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 rounded-lg bg-card/30 hover:bg-card/50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      className="flex items-center gap-4 p-4 rounded-lg bg-card/30 hover:bg-card/50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 relative overflow-hidden"
                       role="listitem"
                       aria-label={`${info.label}: ${info.value}`}
                     >
+                      {/* Contact item code decoration */}
+                      {index === 0 && (
+                        <div className="absolute top-1 right-1 opacity-8 pointer-events-none">
+                          <pre className="font-mono text-xs text-green-400">
+                            <code>{`href="mailto:${info.value}"`}</code>
+                          </pre>
+                        </div>
+                      )}
+                      
                       <div className="p-2 rounded-full bg-primary/10" aria-hidden="true">
                         <info.icon className="h-5 w-5 text-primary" />
                       </div>
@@ -115,7 +164,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="p-6 rounded-lg bg-gradient-to-br from-primary/10 to-blue-500/10 border border-primary/20">
+              <div className="p-6 rounded-lg bg-gradient-to-br from-primary/10 to-blue-500/10 border border-primary/20 relative overflow-hidden">
+                {/* Response time code decoration */}
+                <div className="absolute top-2 right-2 opacity-8 pointer-events-none">
+                  <pre className="font-mono text-xs text-purple-400">
+                    <code>{`const responseTime = "< 24 hours";`}</code>
+                  </pre>
+                </div>
+                
                 <h4 className="font-semibold mb-2">Quick Response</h4>
                 <p className="text-sm text-muted-foreground">
                   I typically respond to messages within 24 hours. For urgent inquiries, 

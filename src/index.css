@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
@@ -132,6 +133,55 @@
   .focus:not-sr-only:focus {
     @apply not-sr-only;
   }
+
+  /* Code-specific styles */
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  }
+
+  /* Floating code animations */
+  .floating-code {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-code:nth-child(2n) {
+    animation-delay: -2s;
+  }
+
+  .floating-code:nth-child(3n) {
+    animation-delay: -4s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(var(--rotate, 0deg));
+    }
+    50% {
+      transform: translateY(-10px) rotate(var(--rotate, 0deg));
+    }
+  }
+
+  /* Code syntax highlighting improvements */
+  .code-snippet {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+  }
+
+  .code-snippet .text-primary {
+    text-shadow: 0 0 4px hsl(var(--primary) / 0.5);
+  }
+
+  .code-snippet .text-green-400 {
+    text-shadow: 0 0 4px rgba(74, 222, 128, 0.3);
+  }
+
+  .code-snippet .text-purple-400 {
+    text-shadow: 0 0 4px rgba(196, 181, 253, 0.3);
+  }
+
+  .code-snippet .text-orange-400 {
+    text-shadow: 0 0 4px rgba(251, 146, 60, 0.3);
+  }
 }
 
 @layer utilities {
@@ -141,6 +191,10 @@
 
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
   @keyframes fadeInUp {
@@ -175,6 +229,26 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Code positioning utilities */
+  .code-overlay {
+    pointer-events: none;
+    user-select: none;
+    will-change: transform;
+  }
+
+  /* Responsive code visibility */
+  @media (max-width: 1024px) {
+    .floating-code-lg {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .floating-code-md {
+      display: none;
+    }
+  }
 }
 
 /* Performance optimizations */
@@ -191,4 +265,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Code element performance */
+pre, code {
+  font-variant-ligatures: none;
+  text-rendering: optimizeSpeed;
+}
+
+/* Backdrop blur performance */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }

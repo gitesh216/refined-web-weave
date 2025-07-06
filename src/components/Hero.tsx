@@ -1,12 +1,44 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import FloatingCode from '@/components/ui/floating-code';
+import { codeSnippets } from '@/utils/codeSnippets';
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5"></div>
+      
+      {/* Floating Code Elements */}
+      <FloatingCode
+        code={codeSnippets.hero.component}
+        position="top-left"
+        opacity={0.12}
+        rotate={-8}
+        className="hidden lg:block max-w-sm"
+        animate={true}
+      />
+      
+      <FloatingCode
+        code={codeSnippets.hero.styles}
+        position="top-right"
+        opacity={0.15}
+        rotate={12}
+        language="css"
+        className="hidden xl:block max-w-xs"
+        animate={true}
+      />
+
+      <FloatingCode
+        code={codeSnippets.hero.interface}
+        position="bottom-left"
+        opacity={0.1}
+        rotate={-5}
+        language="typescript"
+        className="hidden lg:block max-w-sm"
+        animate={true}
+      />
       
       <div className="section-padding py-20 relative z-10">
         <div className="container-width text-center">
