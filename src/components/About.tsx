@@ -5,10 +5,10 @@ import { codeSnippets } from '@/utils/codeSnippets';
 
 const About = () => {
   const highlights = [
-    "5+ years of experience",
-    "50+ projects completed",
+    "Focused on writing clean code",
+    "Hands-on with LLM APIs integration",
     "Full-stack expertise",
-    "Cloud architecture",
+    "Exploring new Technologies",
     "Team leadership"
   ];
 
@@ -48,15 +48,15 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up relative">
               {/* Inline code decoration */}
-              <div className="absolute -top-8 -right-8 opacity-8 pointer-events-none hidden lg:block">
+              {/* <div className="absolute -top-8 -right-8 opacity-8 pointer-events-none hidden lg:block">
                 <pre className="font-mono text-xs text-primary">
                   <code>{`const developer = {
-  name: "John Doe",
-  experience: "5+ years",
+  name: "Gitesh Zope",
+  experience: "1+ years",
   passion: "Full-stack development"
 };`}</code>
                 </pre>
-              </div>
+              </div> */}
               
               <div className="prose prose-lg text-foreground max-w-none relative z-10">
                 <p className="text-lg leading-relaxed mb-6">
@@ -91,12 +91,12 @@ const About = () => {
 
             <div className="animate-fade-in-up relative">
               {/* Code decoration around image */}
-              <div className="absolute -top-4 -left-4 opacity-6 pointer-events-none">
+              {/* <div className="absolute -top-4 -left-4 opacity-6 pointer-events-none">
                 <pre className="font-mono text-xs text-green-400">
                   <code>{`// Always learning
 const skills = [...existingSkills, newTech];`}</code>
                 </pre>
-              </div>
+              </div> */}
               
               <div className="relative">
                 <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 p-1">
@@ -110,13 +110,13 @@ const skills = [...existingSkills, newTech];`}</code>
                 </div>
                 
                 {/* Bottom right code decoration */}
-                <div className="absolute -bottom-4 -right-4 opacity-8 pointer-events-none">
+                {/* <div className="absolute -bottom-4 -right-4 opacity-8 pointer-events-none">
                   <pre className="font-mono text-xs text-orange-400">
                     <code>{`<div className="rounded-2xl">
   <img src="profile.jpg" />
 </div>`}</code>
                   </pre>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

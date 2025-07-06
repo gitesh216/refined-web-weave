@@ -1,30 +1,73 @@
-
-import { Badge } from '@/components/ui/badge';
-import FloatingCode from '@/components/ui/floating-code';
-import { codeSnippets } from '@/utils/codeSnippets';
+import { Badge } from "@/components/ui/badge";
+import FloatingCode from "@/components/ui/floating-code";
+import { codeSnippets } from "@/utils/codeSnippets";
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "JavaScript", "HTML5", "CSS3"],
-      color: "bg-blue-500/10 text-blue-400 border-blue-500/20"
+      skills: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+      ],
+      color: "bg-rose-500/10 text-rose-400 border-rose-500/20",
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB", "Redis", "GraphQL"],
-      color: "bg-green-500/10 text-green-400 border-green-500/20"
+      skills: [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Python",
+      ],
+      color: "bg-green-500/10 text-green-400 border-green-500/20",
     },
     {
       title: "DevOps & Tools",
-      skills: ["AWS", "Docker", "Kubernetes", "Git", "CI/CD", "Linux", "Nginx", "Terraform"],
-      color: "bg-purple-500/10 text-purple-400 border-purple-500/20"
+      skills: [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Git",
+        "CI/CD",
+        "Linux",
+        "Nginx",
+        "Terraform",
+      ],
+      color: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
     },
     {
-      title: "Mobile & Other",
-      skills: ["React Native", "Flutter", "REST APIs", "Microservices", "Testing", "Agile", "Figma", "Firebase"],
-      color: "bg-orange-500/10 text-orange-400 border-orange-500/20"
-    }
+      title: "AI & Emerging Tech",
+      skills: [
+        "OpenAI API",
+        "Vector DBs",
+        "ChatGPT",
+        "Prompt Engineering",
+        "AI Integration",
+        "LLMs",
+        "RAG",
+      ],
+      color: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    },
+    {
+      title: "Architecture & Patterns",
+      skills: [
+        "Monorepos",
+        "Modular Design",
+        "Clean Code",
+        "Folder Structures",
+        "Reusable Components",
+        "Code Splitting",
+      ],
+      color: "bg-slate-500/10 text-slate-400 border-slate-500/20",
+    },
   ];
 
   return (
@@ -38,7 +81,7 @@ const Skills = () => {
         className="absolute top-20 -left-20 max-w-md hidden lg:block"
         animate={true}
       />
-      
+
       <FloatingCode
         code={codeSnippets.skills.rendering}
         position="custom"
@@ -71,22 +114,26 @@ const Skills = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 relative">
             {skillCategories.map((category, index) => (
-              <div key={category.title} className="tech-card animate-fade-in-up relative overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div
+                key={category.title}
+                className="tech-card animate-fade-in-up relative overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <h3 className="text-xl font-semibold mb-4 text-primary relative z-10">
                   {category.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 relative z-10">
                   {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill} 
-                      variant="outline" 
+                    <Badge
+                      key={skill}
+                      variant="outline"
                       className={`${category.color} hover:scale-105 transition-transform cursor-default`}
                     >
                       {skill}
                     </Badge>
                   ))}
                 </div>
-                
+
                 {/* Card-specific code decoration */}
                 {index === 1 && (
                   <div className="absolute top-2 right-2 opacity-5 pointer-events-none">
@@ -106,7 +153,9 @@ const Skills = () => {
           <div className="mt-16 text-center animate-fade-in-up">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full border border-primary/20">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-              <span className="text-sm font-medium">Always learning and exploring new technologies</span>
+              <span className="text-sm font-medium">
+                Always learning and exploring new technologies
+              </span>
             </div>
           </div>
         </div>
