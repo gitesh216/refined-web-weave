@@ -39,16 +39,16 @@ const ContactForm = () => {
     try {
       // Initialize EmailJS (you'll need to set up your service ID, template ID, and public key)
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Replace with your EmailJS service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Replace with your EmailJS template ID
         {
           from_name: data.name,
           from_email: data.email,
           subject: data.subject,
           message: data.message,
-          to_email: 'john.doe@example.com' // Replace with your email
+          to_email: 'giteshzope19@gmail.com' // Replace with your email
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Replace with your EmailJS public key
       );
 
       if (result.status === 200) {

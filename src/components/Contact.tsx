@@ -9,19 +9,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'john.doe@example.com',
-      href: 'mailto:john.doe@example.com'
+      value: 'giteshzope19@gmail.com',
+      href: 'mailto:giteshzope19@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+91 7218308547',
+      href: 'tel:+917218308547'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Airoli, Navi Mumbai',
       href: '#'
     }
   ];
@@ -30,19 +30,19 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/gitesh216',
       color: 'hover:text-gray-400'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/gitesh-zope/',
       color: 'hover:text-blue-500'
     },
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:john.doe@example.com',
+      href: 'mailto:giteshzope19@gmail.com',
       color: 'hover:text-green-500'
     }
   ];

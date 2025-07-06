@@ -6,9 +6,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:john.doe@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/gitesh216', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/gitesh-zope/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:giteshzope19@gmail.com', label: 'Email' },
   ];
 
   const quickLinks = [
@@ -31,7 +31,7 @@ const Footer = () => {
             {/* Brand & Description */}
             <div>
               <div className="font-bold text-xl gradient-text mb-4">
-                John Doe
+                Gitesh Zope
               </div>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Full-stack developer passionate about creating exceptional digital experiences 
@@ -73,18 +73,18 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-4">Let's Connect</h4>
               <div className="space-y-2 text-muted-foreground">
-                <p>San Francisco, CA</p>
+                <p>Airoli, Navi Mumbai</p>
                 <a 
                   href="mailto:john.doe@example.com" 
                   className="block hover:text-primary transition-colors"
                 >
-                  john.doe@example.com
+                  giteshzope19@gmail.com
                 </a>
                 <a 
                   href="tel:+15551234567" 
                   className="block hover:text-primary transition-colors"
                 >
-                  +1 (555) 123-4567
+                  +91 7218308547
                 </a>
               </div>
             </div>
@@ -92,7 +92,7 @@ const Footer = () => {
 
           <div className="border-t border-border/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-              © {currentYear} John Doe. All rights reserved. Built with React & Tailwind CSS.
+              © {currentYear} Gitesh Zope. All rights reserved. Built with ❤️.
             </p>
             
             <Button
