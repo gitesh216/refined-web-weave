@@ -63,8 +63,8 @@ const Projects = () => {
       description: "A simple Kanban board built with JavaScript to practice DOM manipulation and state management. Supports task creation, drag-and-drop between columns, and dynamic UI updates — designed for hands-on JS learning.",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=739&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       technologies: ["Javascript", "DOM", "HTML", "CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://kanban-board-js-gules.vercel.app/",
+      githubUrl: "https://github.com/gitesh216/kanban-board-project",
       featured: false
     },
   ];
