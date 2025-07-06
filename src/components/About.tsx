@@ -1,7 +1,6 @@
-
-import { Badge } from '@/components/ui/badge';
-import FloatingCode from '@/components/ui/floating-code';
-import { codeSnippets } from '@/utils/codeSnippets';
+import { Badge } from "@/components/ui/badge";
+import FloatingCode from "@/components/ui/floating-code";
+import { codeSnippets } from "@/utils/codeSnippets";
 
 const About = () => {
   const highlights = [
@@ -9,7 +8,7 @@ const About = () => {
     "Hands-on with LLM APIs integration",
     "Full-stack expertise",
     "Exploring new Technologies",
-    "Team leadership"
+    "Team leadership",
   ];
 
   return (
@@ -23,7 +22,7 @@ const About = () => {
         className="absolute top-20 right-0 max-w-md hidden xl:block"
         animate={true}
       />
-      
+
       <FloatingCode
         code={codeSnippets.about.animations}
         position="custom"
@@ -41,7 +40,8 @@ const About = () => {
               About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Learn more about my journey, experience, and what drives my passion for development
+              Learn more about my journey, experience, and what drives my
+              passion for development
             </p>
           </div>
 
@@ -57,31 +57,35 @@ const About = () => {
 };`}</code>
                 </pre>
               </div> */}
-              
+
               <div className="prose prose-lg text-foreground max-w-none relative z-10">
                 <p className="text-lg leading-relaxed mb-6">
-                  Hello! I'm John, a passionate full-stack developer with over 5 years of experience 
-                  creating digital solutions that make a difference. My journey began with curiosity 
-                  about how websites work, which quickly evolved into a deep love for coding and 
-                  problem-solving.
-                </p>
-                
-                <p className="text-lg leading-relaxed mb-6">
-                  I specialize in modern web technologies including React, Node.js, and cloud platforms. 
-                  I believe in writing clean, maintainable code and creating user experiences that are 
-                  both beautiful and functional. When I'm not coding, you can find me exploring new 
-                  technologies, contributing to open source, or mentoring aspiring developers.
+                  Hello! I'm Gitesh Zope, a passionate full-stack developer and
+                  final-year Computer Engineering student with a strong interest
+                  in solving real-world problems through technology. My journey
+                  started with curiosity during my diploma years, where I
+                  actively contributed to my college's tech community and built
+                  a strong academic foundation.
                 </p>
 
-                <p className="text-lg leading-relaxed mb-8">
-                  I'm always excited about new challenges and opportunities to grow. Whether it's 
-                  building scalable applications, optimizing performance, or collaborating with 
-                  amazing teams, I bring enthusiasm and expertise to every project.
+                <p className="text-lg leading-relaxed mb-6">
+                  I specialize in modern web development using the MERN stack,
+                  and I’ve built projects ranging from a LeetCode-style coding
+                  platform to AI-powered PDF tools and Chrome extensions. I
+                  enjoy building products that are not just functional, but also
+                  intuitive and impactful. When I’m not coding, I’m usually
+                  learning new technologies, exploring AI/ML, or working on
+                  open-source and collaborative projects with my team.
                 </p>
+
 
                 <div className="flex flex-wrap gap-2">
                   {highlights.map((highlight, index) => (
-                    <Badge key={index} variant="secondary" className="px-3 py-1">
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="px-3 py-1"
+                    >
                       {highlight}
                     </Badge>
                   ))}
@@ -97,18 +101,27 @@ const About = () => {
 const skills = [...existingSkills, newTech];`}</code>
                 </pre>
               </div> */}
-              
-              <div className="relative">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 p-1">
-                  <div className="w-full h-full rounded-2xl bg-muted flex items-center justify-center">
+
+              <div className="relaive">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 p-10">
+            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary/10 to-blue-500/20 flex items-center justify-center overflow-hidden p-10">
                     <div className="text-center">
-                      <div className="text-6xl mb-4">👨‍💻</div>
-                      <p className="text-muted-foreground">Professional Photo</p>
-                      <p className="text-sm text-muted-foreground">Coming Soon</p>
+                      <img
+                        src="/images/myimage2.jpeg"
+                        alt="Professional Photo"
+                        className="w-full h-full object-contain rounded-2xl"
+                      />
+                      {/* <div className="text-6xl mb-4">👨‍💻</div>
+                      <p className="text-muted-foreground">
+                        Professional Photo
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Coming Soon
+                      </p> */}
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Bottom right code decoration */}
                 {/* <div className="absolute -bottom-4 -right-4 opacity-8 pointer-events-none">
                   <pre className="font-mono text-xs text-orange-400">

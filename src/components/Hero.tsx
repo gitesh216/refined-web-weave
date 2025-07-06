@@ -56,12 +56,11 @@ const Hero = () => {
             </h1>
 
             <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 font-light">
-              Full-Stack Developer
+              Engineer
             </h2>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              Passionate about creating exceptional digital experiences with modern web technologies. 
-              Specializing in React, Node.js, and cloud architecture.
+              An introvert who talks less but builds more — turning ideas into working software with focus and intent.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

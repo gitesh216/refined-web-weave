@@ -11,10 +11,10 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "John Doe - Full-Stack Developer Portfolio",
+  title = "Gitesh Zope - Full-Stack Developer Portfolio",
   description = "Full-Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio and get in touch for your next project.",
   keywords = "full-stack developer, react developer, nodejs, portfolio, web development, javascript",
-  image = "https://lovable.dev/opengraph-image-p98pqg.png",
+  image = "",
   url = typeof window !== 'undefined' ? window.location.href : '',
   type = 'website'
 }) => {
