@@ -1,34 +1,8 @@
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import ContactForm from '@/components/ContactForm';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
-import { useState } from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
-
   const contactInfo = [
     {
       icon: Mail,
@@ -72,11 +46,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20" role="region" aria-labelledby="contact-heading">
       <div className="section-padding">
         <div className="container-width">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold mb-4">
               Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -88,86 +62,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="animate-fade-in-up">
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send me a message</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and I'll get back to you as soon as possible.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
-                          Name *
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Your full name"
-                          className="bg-background/50"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
-                          Email *
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="your.email@example.com"
-                          className="bg-background/50"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                        Subject *
-                      </label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        required
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        placeholder="What's this about?"
-                        className="bg-background/50"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
-                        Message *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Tell me about your project or how I can help you..."
-                        rows={5}
-                        className="bg-background/50 resize-none"
-                      />
-                    </div>
-
-                    <Button type="submit" size="lg" className="w-full">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <ContactForm />
             </div>
 
             {/* Contact Info */}
@@ -180,14 +75,16 @@ const Contact = () => {
                   I'm always open to discussing new opportunities and interesting projects.
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-4" role="list">
                   {contactInfo.map((info) => (
                     <a
                       key={info.label}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 rounded-lg bg-card/30 hover:bg-card/50 transition-colors"
+                      className="flex items-center gap-4 p-4 rounded-lg bg-card/30 hover:bg-card/50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      role="listitem"
+                      aria-label={`${info.label}: ${info.value}`}
                     >
-                      <div className="p-2 rounded-full bg-primary/10">
+                      <div className="p-2 rounded-full bg-primary/10" aria-hidden="true">
                         <info.icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
@@ -201,17 +98,18 @@ const Contact = () => {
 
               <div>
                 <h4 className="text-xl font-semibold mb-4">Follow me</h4>
-                <div className="flex gap-4">
+                <div className="flex gap-4" role="list">
                   {socialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-full bg-card/30 hover:bg-card/50 transition-all duration-300 hover:scale-110 ${social.color}`}
-                      aria-label={social.label}
+                      className={`p-3 rounded-full bg-card/30 hover:bg-card/50 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${social.color}`}
+                      aria-label={`Follow me on ${social.label}`}
+                      role="listitem"
                     >
-                      <social.icon size={20} />
+                      <social.icon size={20} aria-hidden="true" />
                     </a>
                   ))}
                 </div>

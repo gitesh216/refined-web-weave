@@ -1,6 +1,8 @@
+
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Github, ArrowRight } from 'lucide-react';
+import OptimizedImage from '@/components/ui/optimized-image';
 
 const Projects = () => {
   const projects = [
@@ -70,11 +72,11 @@ const Projects = () => {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section id="projects" className="py-20 bg-card/30">
+    <section id="projects" className="py-20 bg-card/30" role="region" aria-labelledby="projects-heading">
       <div className="section-padding">
         <div className="container-width">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 id="projects-heading" className="text-3xl md:text-4xl font-bold mb-4">
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -85,15 +87,16 @@ const Projects = () => {
           {/* Featured Projects */}
           <div className="grid lg:grid-cols-1 gap-12 mb-16">
             {featuredProjects.map((project, index) => (
-              <div key={project.id} className={`project-card hover-lift animate-fade-in-up flex flex-col lg:flex-row ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
+              <article key={project.id} className={`project-card hover-lift animate-fade-in-up flex flex-col lg:flex-row ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 0.2}s` }}>
                 <div className="lg:w-1/2">
-                  <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+                  <OptimizedImage
+                    src={project.image}
+                    alt={`Screenshot of ${project.title} project`}
+                    className="aspect-video rounded-lg"
+                    priority={index === 0}
+                    width={500}
+                    height={300}
+                  />
                 </div>
                 <div className="lg:w-1/2 p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-3">
@@ -103,51 +106,62 @@ const Projects = () => {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6" role="list" aria-label="Technologies used">
                     {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
+                      <Badge key={tech} variant="outline" className="text-xs" role="listitem">
                         {tech}
                       </Badge>
                     ))}
                   </div>
                   <div className="flex gap-4">
                     <Button asChild className="flex-1">
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        Live Demo <ArrowRight className="ml-2 h-4 w-4" />
+                      <a 
+                        href={project.liveUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={`View live demo of ${project.title} (opens in new tab)`}
+                      >
+                        Live Demo <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4" />
+                      <a 
+                        href={project.githubUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={`View source code for ${project.title} on GitHub (opens in new tab)`}
+                      >
+                        <Github className="h-4 w-4" aria-hidden="true" />
+                        <span className="sr-only">View source code</span>
                       </a>
                     </Button>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
           {/* Other Projects Grid */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-8 text-center">Other Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
               {otherProjects.map((project, index) => (
-                <div key={project.id} className="project-card hover-lift animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+                <article key={project.id} className="project-card hover-lift animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }} role="listitem">
+                  <OptimizedImage
+                    src={project.image}
+                    alt={`Screenshot of ${project.title} project`}
+                    className="aspect-video rounded-t-lg"
+                    width={400}
+                    height={240}
+                  />
                   <div className="p-6">
                     <h4 className="text-xl font-semibold mb-3">{project.title}</h4>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-1 mb-4">
+                    <div className="flex flex-wrap gap-1 mb-4" role="list" aria-label="Technologies used">
                       {project.technologies.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                        <Badge key={tech} variant="outline" className="text-xs" role="listitem">
                           {tech}
                         </Badge>
                       ))}
@@ -159,26 +173,42 @@ const Projects = () => {
                     </div>
                     <div className="flex gap-2">
                       <Button size="sm" asChild className="flex-1">
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <a 
+                          href={project.liveUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          aria-label={`View demo of ${project.title} (opens in new tab)`}
+                        >
                           Demo
                         </a>
                       </Button>
                       <Button size="sm" variant="outline" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-3 w-3" />
+                        <a 
+                          href={project.githubUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          aria-label={`View source code for ${project.title} on GitHub (opens in new tab)`}
+                        >
+                          <Github className="h-3 w-3" aria-hidden="true" />
+                          <span className="sr-only">View source code</span>
                         </a>
                       </Button>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
 
           <div className="text-center animate-fade-in-up">
             <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                View All Projects on GitHub <Github className="ml-2 h-4 w-4" />
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="View all projects on GitHub (opens in new tab)"
+              >
+                View All Projects on GitHub <Github className="ml-2 h-4 w-4" aria-hidden="true" />
               </a>
             </Button>
           </div>
