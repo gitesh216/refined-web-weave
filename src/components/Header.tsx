@@ -41,9 +41,9 @@ const Header = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:contact@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/gitesh216', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/gitesh-zope/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:giteshzope19@example.com', label: 'Email' },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

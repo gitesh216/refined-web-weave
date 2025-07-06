@@ -46,13 +46,13 @@ const Hero = () => {
             <div className="mb-8">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-blue-500 p-1">
                 <div className="w-full h-full rounded-full bg-muted flex items-center justify-center text-4xl font-bold">
-                  JD
+                  GZ
                 </div>
               </div>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="gradient-text">John Doe</span>
+              <span className="gradient-text">Gitesh Zope</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 font-light">
@@ -75,7 +75,7 @@ const Hero = () => {
 
             <div className="flex justify-center space-x-6">
               <a
-                href="https://github.com"
+                href="https://github.com/gitesh216"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card/50 hover:bg-card transition-all duration-300 hover:scale-110"
@@ -84,7 +84,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/gitesh-zope/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card/50 hover:bg-card transition-all duration-300 hover:scale-110"
@@ -93,7 +93,7 @@ const Hero = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:giteshzope19@example.com"
                 className="p-3 rounded-full bg-card/50 hover:bg-card transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
@@ -102,7 +102,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-50 left-1/2 transform -translate-x-1/2 animate-bounce">
             <a href="#about" className="p-2 text-primary">
               <ArrowDown size={24} />
             </a>
