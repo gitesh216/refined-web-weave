@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# 🚀 Portfolio Website
 
-## Project info
+A modern, responsive portfolio website built with React.js and shadcn/ui, featuring a unique "Leaky Code Design" aesthetic and comprehensive developer profile integration.
 
-**URL**: https://lovable.dev/projects/4bba7c85-809d-4939-b463-fca1a72cfd41
+![Portfolio Preview](![image](https://github.com/user-attachments/assets/8cc92147-e376-424e-91dd-0e4d36fb4ae1)
+)
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+### 🎨 Design & UI
+- **Modern & Minimal**: Clean, professional design with sophisticated aesthetics
+- **Leaky Code Design**: Unique visual concept with code snippets as decorative elements
+- **Responsive**: Fully responsive design for all device sizes
+- **Animations**: Subtle, purposeful animations and transitions
 
-**Use Lovable**
+### 🔧 Technical Features
+- **React.js**: Built with modern React hooks and functional components
+- **shadcn/ui**: Beautiful, accessible UI components
+- **Tailwind CSS**: Utility-first styling with custom design system
+- **TypeScript**: Type-safe development (optional)
+- **Performance Optimized**: Fast loading with optimized images and code splitting
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4bba7c85-809d-4939-b463-fca1a72cfd41) and start prompting.
+### 📱 Sections
+- **Hero Section**: Professional introduction with call-to-action
+- **Tech Stack**: Visual representation of skills and technologies
+- **Projects**: Showcase of work with live demos and source code
+- **About**: Personal story and professional background
+- **Profile Page**: GitHub and LeetCode stats integration
+- **Contact**: Easy ways to get in touch
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
+- **Framework**: React.js 18+
+- **UI Library**: shadcn/ui
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛡️ Security
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Environment variables are properly configured
+- API keys are stored securely
+- No sensitive data in client-side code
+- Regular dependency updates
 
-Follow these steps:
+## 🚀 Performance
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Lighthouse Score**: 85+ on all metrics
+- **Bundle Size**: Optimized with code splitting
+- **Image Optimization**: WebP format with lazy loading
+- **Caching**: Proper browser caching strategies
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📝 License
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌟 Acknowledgments
 
-**Use GitHub Codespaces**
+- [shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [Lucide React](https://lucide.dev/) for icons
+- [React](https://reactjs.org/) for the amazing framework
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+⭐ **Star this repository if you found it helpful!**
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4bba7c85-809d-4939-b463-fca1a72cfd41) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Built with ❤️ by [Gitesh Zope](https://github.com/gitesh216)**
