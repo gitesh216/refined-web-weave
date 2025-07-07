@@ -13,7 +13,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   title = "Gitesh Zope - Full-Stack Developer Portfolio",
   description = "Hi, I'm Gitesh Zope — a full-stack developer building web and AI-powered solutions. Explore my work, projects, and get in touch.",
   keywords = "gitesh zope, full-stack developer, backend developer, nodejs, portfolio, software engineer, javascript",
-  image = "",
+  image = "/images/preview-card.png",
   url = typeof window !== 'undefined' ? window.location.href : '',
   type = 'website'
 }) => {
