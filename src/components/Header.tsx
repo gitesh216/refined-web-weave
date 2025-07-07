@@ -1,26 +1,28 @@
-
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ["home", "about", "skills", "projects", "contact"];
       const scrollPosition = window.scrollY + 100;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -28,56 +30,69 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/gitesh216', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/gitesh-zope/', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:giteshzope19@gmail.com', label: 'Email' },
+    { icon: Github, href: "https://github.com/gitesh216", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/gitesh-zope/",
+      label: "LinkedIn",
+    },
+    { icon: Mail, href: "mailto:giteshzope19@gmail.com", label: "Email" },
   ];
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
     }
     setIsMenuOpen(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape' && isMenuOpen) {
+    if (e.key === "Escape" && isMenuOpen) {
       setIsMenuOpen(false);
     }
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/90 backdrop-blur-md border-b border-border/50' : 'bg-transparent'
+        scrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border/50"
+          : "bg-transparent"
       }`}
       role="banner"
       onKeyDown={handleKeyDown}
     >
-      <nav className="section-padding py-4" role="navigation" aria-label="Main navigation">
+      <nav
+        className="section-padding py-4"
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div className="container-width flex items-center justify-between">
           <div className="font-bold text-xl gradient-text">
-            <a 
-              href="#home" 
-              onClick={(e) => handleSmoothScroll(e, '#home')}
+            <a
+              href="#home"
+              onClick={(e) => handleSmoothScroll(e, "#home")}
               className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
               aria-label="Go to home section"
             >
@@ -93,12 +108,14 @@ const Header = () => {
                 href={item.href}
                 onClick={(e) => handleSmoothScroll(e, item.href)}
                 className={`text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1 ${
-                  activeSection === item.href.substring(1) 
-                    ? 'text-primary' 
-                    : 'hover:text-primary'
+                  activeSection === item.href.substring(1)
+                    ? "text-primary"
+                    : "hover:text-primary"
                 }`}
                 role="menuitem"
-                aria-current={activeSection === item.href.substring(1) ? 'page' : undefined}
+                aria-current={
+                  activeSection === item.href.substring(1) ? "page" : undefined
+                }
               >
                 {item.label}
               </a>
@@ -129,17 +146,23 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
-            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
           >
-            {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+            {isMenuOpen ? (
+              <X size={20} aria-hidden="true" />
+            ) : (
+              <Menu size={20} aria-hidden="true" />
+            )}
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div 
+          <div
             id="mobile-menu"
-            className="md:hidden mt-4 py-4 border-t border-border/50"
+            className="md:hidden fixed top-16 left-0 w-full bg-background shadow-lg border-t border-border z-40 px-6 py-6"
             role="menu"
             aria-labelledby="mobile-menu-button"
           >
@@ -150,17 +173,26 @@ const Header = () => {
                   href={item.href}
                   onClick={(e) => handleSmoothScroll(e, item.href)}
                   className={`text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1 ${
-                    activeSection === item.href.substring(1) 
-                      ? 'text-primary' 
-                      : 'hover:text-primary'
+                    activeSection === item.href.substring(1)
+                      ? "text-primary"
+                      : "hover:text-primary"
                   }`}
                   role="menuitem"
-                  aria-current={activeSection === item.href.substring(1) ? 'page' : undefined}
+                  aria-current={
+                    activeSection === item.href.substring(1)
+                      ? "page"
+                      : undefined
+                  }
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="flex items-center space-x-4 pt-4 border-t border-border/50" role="list">
+
+              {/* Social links */}
+              <div
+                className="flex justify-center gap-4 pt-6 border-t border-border/50"
+                role="list"
+              >
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
