@@ -62,19 +62,15 @@ const About = () => {
                 <p className="text-lg leading-relaxed mb-6">
                   Hello! I'm Gitesh Zope, a passionate full-stack developer and
                   final-year Computer Engineering student with a strong interest
-                  in solving real-world problems through technology. My journey
-                  started with curiosity during my diploma years, where I
-                  actively contributed to my college's tech community and built
-                  a strong academic foundation.
+                  in solving real-world problems through technology.
                 </p>
 
                 <p className="text-lg leading-relaxed mb-6">
                   I specialize in modern web development using the MERN stack,
                   and I’ve built projects ranging from a LeetCode-style coding
-                  platform to AI-powered PDF tools and Chrome extensions. I
-                  enjoy building products that are not just functional, but also
+                  platform to AI-powered tools. I enjoy building products that are
                   intuitive and impactful. When I’m not coding, I’m usually
-                  learning new technologies, exploring AI/ML, or working on
+                  learning new technologies, exploring AI, or working on
                   open-source and collaborative projects with my team.
                 </p>
 
