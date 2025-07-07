@@ -3,7 +3,6 @@
 A modern, responsive portfolio website built with React.js and shadcn/ui, featuring a unique "Leaky Code Design" aesthetic and comprehensive developer profile integration.
 
 ![Portfolio Preview](![image](https://github.com/user-attachments/assets/8cc92147-e376-424e-91dd-0e4d36fb4ae1)
-)
 
 ## ✨ Features
 
