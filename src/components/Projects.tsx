@@ -11,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: "XCodeLab - Coding Platform",
       description: "A full-stack coding platform for practicing data structures and algorithms. Supports multi-language problem solving, real-time code execution, submission tracking, and custom playlists for organized learning.",
-      image: "https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "http://giteshzope.com/images/xcodelab.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Prisma", "Tailwind CSS", "DaisyUI", "Zod", "Judge0", "Docker", "Monaco Editor"],
       liveUrl: "https://vimeo.com/1098428973?share=copy",
       githubUrl: "https://www.linkedin.com/in/gitesh-zope/",
