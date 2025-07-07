@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 
 interface SEOHeadProps {
@@ -12,8 +11,8 @@ interface SEOHeadProps {
 
 const SEOHead: React.FC<SEOHeadProps> = ({
   title = "Gitesh Zope - Full-Stack Developer Portfolio",
-  description = "Full-Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio and get in touch for your next project.",
-  keywords = "full-stack developer, react developer, nodejs, portfolio, web development, javascript",
+  description = "Hi, I'm Gitesh Zope — a full-stack developer building web and AI-powered solutions. Explore my work, projects, and get in touch.",
+  keywords = "gitesh zope, full-stack developer, backend developer, nodejs, portfolio, software engineer, javascript",
   image = "",
   url = typeof window !== 'undefined' ? window.location.href : '',
   type = 'website'
@@ -42,7 +41,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     // Standard meta tags
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
-    updateMetaTag('author', 'John Doe');
+    updateMetaTag('author', 'Gitesh Zope');
 
     // Open Graph tags
     updateMetaTag('og:title', title, true);
@@ -50,7 +49,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     updateMetaTag('og:image', image, true);
     updateMetaTag('og:url', url, true);
     updateMetaTag('og:type', type, true);
-    updateMetaTag('og:site_name', 'John Doe Portfolio', true);
+    updateMetaTag('og:site_name', 'Gitesh Zope Portfolio', true);
 
     // Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image', true);
@@ -65,25 +64,25 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         {
           "@type": "Person",
           "@id": `${url}#person`,
-          "name": "John Doe",
+          "name": "Gitesh Zope",
           "jobTitle": "Full-Stack Developer",
           "description": description,
           "url": url,
           "sameAs": [
-            "https://github.com",
-            "https://linkedin.com",
-            "mailto:john.doe@example.com"
+            "https://github.com/gitesh216",
+            "https://www.linkedin.com/in/gitesh-zope/",
+            "mailto:giteshzope19@gmail.com"
           ],
           "knowsAbout": [
             "React", "Node.js", "TypeScript", "JavaScript", "Python", 
-            "PostgreSQL", "MongoDB", "AWS", "Docker", "GraphQL"
+            "PostgreSQL", "MongoDB", "AWS", "Docker", "Redis", "Websockets"
           ]
         },
         {
           "@type": "WebSite",
           "@id": `${url}#website`,
           "url": url,
-          "name": "John Doe - Portfolio",
+          "name": "Gitesh Zope - Portfolio",
           "description": description,
           "publisher": {
             "@id": `${url}#person`
