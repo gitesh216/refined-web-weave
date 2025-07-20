@@ -155,15 +155,15 @@ const Projects = () => {
                   </div>
                   <div className="flex gap-4">
                     <Button asChild className="flex-1">
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        aria-label={`View live demo of ${project.title} (opens in new tab)`}
-                      >
-                        Live Demo <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                      </a>
-                    </Button>
+                        <a 
+                          href={project.liveUrl === '#' ? '/not-available' : project.liveUrl} 
+                          target={project.liveUrl === '#' ? '_self' : '_blank'} 
+                          rel="noopener noreferrer"
+                          aria-label={`View live demo of ${project.title} ${project.liveUrl === '#' ? '(demo not available)' : '(opens in new tab)'}`}
+                        >
+                          Live Demo <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                        </a>
+                      </Button>
                     <Button variant="outline" asChild>
                       <a 
                         href={project.githubUrl} 
@@ -223,10 +223,10 @@ const Projects = () => {
                     <div className="flex gap-2">
                       <Button size="sm" asChild className="flex-1">
                         <a 
-                          href={project.liveUrl} 
-                          target="_blank" 
+                          href={project.liveUrl === '#' ? '/not-available' : project.liveUrl} 
+                          target={project.liveUrl === '#' ? '_self' : '_blank'} 
                           rel="noopener noreferrer"
-                          aria-label={`View demo of ${project.title} (opens in new tab)`}
+                          aria-label={`View demo of ${project.title} ${project.liveUrl === '#' ? '(demo not available)' : '(opens in new tab)'}`}
                         >
                           Demo
                         </a>
